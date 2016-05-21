@@ -21,12 +21,19 @@
   <div class="col s3">
     <h4>Mixologists</h4>
     <div class="divider"></div>
-    <% @mixologists.each do |m| %>
-        <p>
-          <%= radio_button_tag :mixologist_id, m.id %>
-          <%= label_tag 'mixologist_id_'+m.id.to_s, m.participant_name %>
-        </p>
-    <% end %>
+    <table>
+      <% @mixologists.in_groups_of(3) do |m1, m2, m3| %>
+          <tr>
+            <td><%= radio_button_tag :mixologist_id, m1.id %><%= label_tag 'mixologist_id_'+m1.id.to_s, m1.participant_name %></td>
+            <% if m2 %>
+                <td><%= radio_button_tag :mixologist_id, m2.id %><%= label_tag 'mixologist_id_'+m2.id.to_s, m2.participant_name %></td>
+            <% end %>
+            <% if m3 %>
+                <td><%= radio_button_tag :mixologist_id, m3.id %><%= label_tag 'mixologist_id_'+m3.id.to_s, m3.participant_name %></td>
+            <% end %>
+          </tr>
+      <% end %>
+    </table>
   </div>
 </div>
 <div class="row">
