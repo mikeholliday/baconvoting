@@ -2,8 +2,8 @@ class VotesController < ApplicationController
 
 
   def  index
-    @chefs = ca=Participant.where(:category => 1).shuffle
-    @mixologists = ca=Participant.where(:category => 2).shuffle
+    @chefs = Participant.where(:category => 1).shuffle
+    @mixologists = Participant.where(:category => 2).shuffle
     render('/votes/index')
   end
 
