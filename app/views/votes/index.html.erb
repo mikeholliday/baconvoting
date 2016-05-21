@@ -1,0 +1,49 @@
+<%= form_tag('/votes', method: :post, class: 'special_input', id: "participant_form") %>
+<div class="row">
+  <div class="col s9">
+    <h4>Chefs</h4>
+    <div class="divider"></div>
+    <table>
+      <% @chefs.in_groups_of(3) do |c1, c2, c3| %>
+          <tr>
+            <td><%= radio_button_tag :chef_id, c1.id %><%= label_tag 'chef_id_'+c1.id.to_s, c1.participant_name %></td>
+            <% if c2 %>
+                <td><%= radio_button_tag :chef_id, c2.id %><%= label_tag 'chef_id_'+c2.id.to_s, c2.participant_name %></td>
+            <% end %>
+            <% if c3 %>
+                <td><%= radio_button_tag :chef_id, c3.id %><%= label_tag 'chef_id_'+c3.id.to_s, c3.participant_name %></td>
+            <% end %>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="col s3">
+    <h4>Mixologists</h4>
+    <div class="divider"></div>
+    <% @mixologists.each do |m| %>
+        <p>
+          <%= radio_button_tag :mixologist_id, m.id %>
+          <%= label_tag 'mixologist_id_'+m.id.to_s, m.participant_name %>
+        </p>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <div class="right">
+      <%= button_tag(type: 'submit', class: "btn waves-effect waves-lighten") do %>
+          Submit <i class="material-icons right">send</i>
+      <% end %>
+    </div>
+  </div>
+</div>
+</form>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4><%= flash[:heading] %></h4>
+    <p id="modal1_message"><%= flash[:notice] %></p>
+  </div>
+</div>
+<div class="notice"></div>

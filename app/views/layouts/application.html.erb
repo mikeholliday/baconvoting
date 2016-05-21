@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baconvoting</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag   'application.scss', media: 'all', 'data-turbolinks-track' => true %>
+  <%=javascript_include_tag  "application.js", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="">
+  <div class="row brown darken-3 z-depth-2">
+    <div class="col s3"><%=image_tag("logo.png") %></div>
+    <div class="col s9">
+      <h2 class="white-text center">People's Choice Voting</h2>
+      <p class="white-text">Please select one Chef and one Mixologist as your selection for the Bacon &amp; Barrels People Choice Winner.
+        <br/>Please only vote once.</p>
+    </div>
+  </div>
+  <%= yield %>
+</div>
+<footer class="page-footer brown darken-3" style="margin-top: 0px; padding-top: 0px">
+  <div class="footer-copyright">
+    <div class="container">
+      © 2015 Create Promotions, LLC
+      <a class="grey-text text-lighten-4 right" href="#!">Bacon &amp; Barrels 2015, Buttonwood Farm &amp; Winery</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

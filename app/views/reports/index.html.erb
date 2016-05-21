@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col s6">
+    <h4>Chefs</h4>
+    <div class="divider"></div>
+    <table>
+      <thead>
+      <tr>
+        <th data-field="id">Name</th>
+        <th data-field="votes">Votes</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @chefs.each do |c| %>
+          <tr>
+            <td><%= c.participant_name %></td>
+            <td><%= c.votes.count %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col s6">
+    <h4>Chefs</h4>
+    <div class="divider"></div>
+    <table>
+      <thead>
+      <tr>
+        <th data-field="id">Name</th>
+        <th data-field="votes">Votes</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @mixologists.each do |m| %>
+          <tr>
+            <td><%= m.participant_name %></td>
+            <td><%= m.votes.count %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
