@@ -81,7 +81,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: baconvoting_production
-  username: baconvoting
-  password: <%= ENV['BACONVOTING_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
