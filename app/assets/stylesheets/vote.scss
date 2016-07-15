@@ -1,3 +1,39 @@
 // Place all the styles related to the vote controller here.
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+label {
+  color: #000000 !important;
+}
+
+[type="radio"]:unchecked + label, [type="radio"]:unchecked + label {
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+  color: #FF5252 !important;
+  font-weight: bold;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+  color: #FF5252 !important;
+  font-weight: bold;
+}
+
+[type="radio"]:checked + label, [type="radio"]:checked + label {
+  color: #FF5252 !important;
+  font-weight: bold;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:before,
+[type="radio"].with-gap:checked + label:after {
+  border: 2px solid #FF5252 !important;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after {
+  background-color: #FF5252 !important;
+  z-index: 0;
+}
